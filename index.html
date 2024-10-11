@@ -1,81 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Diva</title>
+    <title>Web untuk Diva</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', sans-serif;
-            background-color: #ffe6f2;
-            color: #ff66b2;
+            font-family: 'Arial', sans-serif;
+            background-color: #fbeffb;
+            color: #6b4f4f;
             text-align: center;
             margin: 0;
             padding: 0;
         }
         h1 {
-            font-size: 3em;
-            margin-top: 20px;
+            font-size: 2.5em;
+            margin-top: 50px;
         }
         p {
-            font-size: 1.5em;
+            font-size: 1.3em;
             margin: 20px;
         }
-        .heart {
-            color: red;
-            font-size: 2em;
+        .button {
+            background-color: #ff66b2;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .button:hover {
+            background-color: #ff4081;
         }
         .container {
-            margin: 20px auto;
+            margin: 50px auto;
             padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            background-color: #fff0f5;
+            max-width: 600px;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .flower-img, .cute-img {
-            margin: 20px 0;
+        .main-page {
+            display: none;
         }
         .footer {
             font-size: 1em;
             margin-top: 50px;
-            color: #cc0099;
+            color: #996699;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>For Diva</h1>
-        <p>Sending you all my <span class="heart">♥</span> and laughter, because life is better with a smile and lots of love!</p>
-        
-        <div class="flower-img">
-            <img src="https://example.com/flower1.jpg" alt="Beautiful flower" />
-        </div>
+    <div class="container intro-page">
+        <h1>Selamat Datang di Web Diva!</h1>
+        <p>Pencet tombol ini, Dip! Dan lihat ke mana tombol ini akan membawa kamu. 😄</p>
+        <button class="button" onclick="handleClick()">Pencet Dip!</button>
+        <p id="counterText">Kamu sudah memencet 0 kali.</p>
+    </div>
 
-        <p>You are the blooming flower in my garden of happiness. 🌸🌼</p>
-
-        <div class="cute-img">
-            <img src="https://example.com/cute-animal.jpg" alt="Cute animal" />
-        </div>
-
-        <p>And if life gets ruff, just remember this: even the cutest puppies have their bark moments. 🐶</p>
-
-        <div class="flower-img">
-            <img src="https://example.com/flower2.jpg" alt="Flower love" />
-        </div>
-
-        <p>Your smile is as bright as a sunflower, always turning toward the light. 🌻 Keep shining, Diva!</p>
+    <div class="container main-page">
+        <h1>Halaman Utama untuk Diva</h1>
+        <p>Ini halaman penuh cinta buat kamu! 🌸💖</p>
+        <p>Semoga harimu selalu ceria seperti bunga yang bermekaran!</p>
     </div>
 
     <div class="footer">
-        <p>With all my love, 💖💐</p>
+        <p>Dip Dip... Kamu telah sampai di sini 💫</p>
     </div>
+
+    <script>
+        let count = 0;
+
+        function handleClick() {
+            count++;
+            document.getElementById("counterText").innerText = "Kamu sudah memencet " + count + " kali.";
+            
+            if (count === 5) {
+                document.querySelector('.intro-page').style.display = 'none';
+                document.querySelector('.main-page').style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
